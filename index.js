@@ -12,7 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.listen(process.env.PORT, () => {
   console.log("listening on port", process.env.PORT);
 });
-// app.get("**", (req, res, next) => {});
+app.get("/", (req, res) => {
+  res.send("HELLO THIS IS THE BLOCKS UTILIY END POINT");
+});
 app.post("/sms", (req, res) => {
   const { reciever, text } = req.body;
   console.log(reciever, text);
@@ -45,16 +47,16 @@ app.post("/mail", (req, res) => {
       res.json({ success: false, message: err });
     });
 });
-app.post("/image", (req, res, res) => {
-  console.log(req.body);
-  const { email, text } = req.body;
-  sendEmail(email, text)
-    .then(({ result }) => {
-      console.log("message sent", result);
-      res.json({ success: true, result });
-    })
-    .catch(err => {
-      console.log(err);
-      res.json({ success: false, message: err });
-    });
-});
+// app.post("/image", (req, res, res) => {
+//   console.log(req.body);
+//   const { email, text } = req.body;
+//   sendEmail(email, text)
+//     .then(({ result }) => {
+//       console.log("message sent", result);
+//       res.json({ success: true, result });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res.json({ success: false, message: err });
+//     });
+// });
