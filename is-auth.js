@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { config } = require("../../config/index");
+require("dotenv").config();
 module.exports = (req, res, next) => {
   const authHeader = req.get("Authorization");
   if (!authHeader) {
@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
   }
   let decodedToken;
   try {
-    decodedToken = jwt.verify(token, config.jwtSecret);
+    decodedToken = jwt.verify(token, process.env.jwtSecret);
   } catch (err) {
     req.isAuth = false;
     return next();

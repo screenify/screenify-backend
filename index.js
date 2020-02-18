@@ -10,6 +10,8 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+const auth = require("./is-auth");
+app.use(auth);
 const server = app.listen(process.env.PORT, () => {
   console.log("🚀 Connected to port", server.address().port);
   console.log("Press Ctrl + C to stop the server ");
@@ -28,6 +30,7 @@ app.post("/sms", (req, res) => {
       message: text
     })
     .then(result => {
+      c;
       console.log(result);
       res.json({ success: true, result }).status(301);
     })
