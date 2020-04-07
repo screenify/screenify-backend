@@ -4,7 +4,7 @@
   "description": "Services like email and SMS and image uploading",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server.js",
+    "start": "NODE_ENV=production && node./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adam Momen",
