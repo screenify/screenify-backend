@@ -10,7 +10,7 @@ const multer = require('multer')
 //   sendEmail
 // } = require("./email-sended/emailSender");
 
-const createCdnUploader = require('./CdnUploader/index.js');
+const createCdnUploader = require('./cdnUploader/index.js');
 const bodyParser = require("body-parser");
 const express = require("express");
 const cors = require("cors");
