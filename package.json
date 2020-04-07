@@ -1,10 +1,10 @@
 {
-  "name": "blocks-utilities",
+  "name": "screenify-backend",
   "version": "1.0.0",
   "description": "Services like email and SMS and image uploading",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=production && node./server.js",
+    "start": "NODE_ENV=production && node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adam Momen",
@@ -20,7 +20,8 @@
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "multer-storage-cloudinary": "^2.2.1",
+    "random": "^2.2.0",
     "randomstring": "^1.1.5",
-    "sails-service-sms": "^3.1.1"
+    "sting": "0.0.22"
   }
 }
