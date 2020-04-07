@@ -12,10 +12,10 @@ module.exports = class CloudinaryUploader {
             api_key: key,
             api_secret: secret,
             folder: folder,
-            transformation: [{
-                width: 1024,
-                height: 1024,
-            }]
+            // transformation: [{
+            //     width: 1024,
+            //     height: 1024,
+            // }]
         });
     }
     upload(buffer) {
