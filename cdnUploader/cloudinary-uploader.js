@@ -11,7 +11,7 @@ module.exports = class CloudinaryUploader {
             cloud_name: cloudName,
             api_key: key,
             api_secret: secret,
-            folder: folder,
+            // folder: folder,
             // transformation: [{
             //     width: 1024,
             //     height: 1024,
@@ -24,7 +24,7 @@ module.exports = class CloudinaryUploader {
 
             try {
                 cloudinary.v2.uploader.upload(`data:image/png;base64,${content}`, {
-                    folder: '/screenfiy/uploads',
+                    // folder: '/screenfiy/',
                     fetch_format: 'auto',
                     quality: 'auto'
                 }, (error, result) => {
