@@ -9,7 +9,6 @@ module.exports = class CloudinaryUploader {
         let cloudName = config['cloudinaryName'] || '';
         let key = config['cloudinaryApiKey'] || '';
         let secret = config['cloudinarySecret'] || '';
-        let folder = config['cloudinaryFolder'] || '';
 
         cloudinary.config({
             cloud_name: cloudName,
