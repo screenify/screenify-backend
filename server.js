@@ -38,13 +38,15 @@ app.use(bodyParser.urlencoded({
 
 
 /**
- * Get / Api endpoint 
+ * @GET
+ * static Api endpoint 
  */
 app.get("/", (req, res) => {
   res.send("Screenify");
 });
 
 /**
+ * @POST
  * /upload Api endpoint 
  */
 app.use("/api/upload", async (req, res, next) => {
