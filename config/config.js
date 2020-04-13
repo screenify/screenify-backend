@@ -1,7 +1,10 @@
 require("dotenv").config()
 
-module.exports = config = {
 
+/**
+ * Enfironment Varibales Config Interface
+ */
+module.exports = config = {
     "cloudinaryName": process.env.CLOUDINARY_CLOUD_NAME,
     "cloudinarySecret": process.env.CLOUDINARY_SECRET,
     "cloudinaryApiKey": process.env.CLOUDINARY_API_KEY,
