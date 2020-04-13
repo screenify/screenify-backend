@@ -1,5 +1,9 @@
 const cloudinary = require("cloudinary")
 
+/**
+ * Cloudinary Image Uploader
+ * Where image is being uploaded to cloudinary cloud bucket.
+ */
 module.exports = class CloudinaryUploader {
     constructor(config) {
         let cloudName = config['cloudinaryName'] || '';
@@ -11,27 +15,25 @@ module.exports = class CloudinaryUploader {
             cloud_name: cloudName,
             api_key: key,
             api_secret: secret,
-            // folder: folder,
-            // transformation: [{
-            //     width: 1024,
-            //     height: 1024,
-            // }]
         });
     }
+
+    /**
+     * Uploads the image to cloudinary hosting
+     * @param {Buffer} buffer 
+     */
     upload(buffer) {
         return new Promise((resolve, reject) => {
             let content = buffer.toString('base64');
 
             try {
                 cloudinary.v2.uploader.upload(`data:image/png;base64,${content}`, {
-                    // folder: '/screenfiy/',
                     fetch_format: 'auto',
                     quality: 'auto'
                 }, (error, result) => {
                     if (error) {
                         reject(error);
                     } else {
-                        console.log(result);
                         resolve(result.secure_url);
                     }
                 });
