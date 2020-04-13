@@ -1,4 +1,4 @@
-# Screenify Backend 📸🏗️
+# Screenify Backend 📸⚙️
 
 ![CircleCI](https://img.shields.io/circleci/build/github/AdamMomen/blocks-backend/master)
 
@@ -15,7 +15,9 @@ npm start
 
 ## CDN Uploader Service 🖼️
 
-- [x] Google Cloud.
+These are the service providers working in rudendency:
+
+- [x] Google Cloud Storage.
 - [x] Cloudinary.
 - [ ] AWS.
 
