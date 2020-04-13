@@ -1,5 +1,11 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
+
+
+/**
+ * Authorization Middleware
+ * Authorized the uploader based on fixed token.
+ */
 module.exports = (req, res, next) => {
   const authHeader = req.get("Authorization");
   if (!authHeader) {
@@ -25,9 +31,6 @@ module.exports = (req, res, next) => {
     return next();
   }
   req.isAuth = true;
-  req.userId = decodedToken.userId;
-  req.isAdmin = decodedToken.isAdmin;
-  req.isSuperAdmin = decodedToken.isSuperAdmin;
   console.log("userId inside userId", decodedToken);
   next();
 };
