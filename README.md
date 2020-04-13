@@ -3,7 +3,7 @@
 ![CircleCI](https://img.shields.io/circleci/build/github/AdamMomen/blocks-backend/master)
 
 This uploading service built for distributed fail safe system where the host is built for screenify-vscode extension.
-<!-- ![Demo]() -->
+<!-- ![Demo](d) -->
 
 ## Getting Started
 
