@@ -20,6 +20,7 @@ module.exports = class CloudinaryUploader {
     /**
      * Uploads the image to cloudinary hosting
      * @param {Buffer} buffer 
+     * @returns {Promise}
      */
     upload(buffer) {
         return new Promise((resolve, reject) => {
