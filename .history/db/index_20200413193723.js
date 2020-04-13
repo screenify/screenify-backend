@@ -1,8 +1,7 @@
 const redisModel = require("./model")
 
 /** 
- * Upoload Schema
- * Redis Database Schema  
+ * 
  */
 const uploadSchema = {
     namespace: 'uploads',

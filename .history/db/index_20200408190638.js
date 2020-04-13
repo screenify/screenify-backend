@@ -1,10 +1,5 @@
 const redisModel = require("./model")
-
-/** 
- * Upoload Schema
- * Redis Database Schema  
- */
-const uploadSchema = {
+const logSchema = {
     namespace: 'uploads',
     indexes: [{
         getName: () => 'createdAt',
@@ -24,4 +19,4 @@ const uploadSchema = {
         },
     },
 };
-module.exports = new redisModel(uploadSchema)
+module.exports = new redisModel(logSchema)
