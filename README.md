@@ -1,61 +1,43 @@
+# Screenify Backend 📸🏗️
+
 ![CircleCI](https://img.shields.io/circleci/build/github/AdamMomen/blocks-backend/master)
 
-# Utility Services 🏢🏗️
+This uploading service built for distributed fail safe system where the host is built for screenify-vscode extension.
+<!-- ![Demo]() -->
 
-## Email Service 📧
+## Getting Started
 
-To use the email service :
+```js
+npm install
 
-### API End Point 📡
-
-`POST` `/api/email`
-
-### Email Example Request
-
-```json
-{
-  "email": "test@test.com",
-  "text": "Hello World"
-}
+npm start
 ```
 
-## SMS Service 📧
+## CDN Uploader Service 🖼️
+
+- [x] Google Cloud.
+- [x] Cloudinary.
+- [ ] AWS.
 
 ### API End Point 📡
 
 Usage :
 
-`POST` `/api/sms`
-
-### SMS Example Request
-
-```json
-{
-  "receiver": "+21856481323",
-  "text": "Hello World"
-}
-```
-
-## Image Uploader Service 🖼️
-
-### API End Point 📡
-
-Usage :
-
-`POST` `/api/sms`
+`POST` `/api/upload`
 
 ### Image Uploading Example Request
 
 ```json
 {
-  "file": "catImage.png"
+  "buffer": "89 82 36 ..."
 }
 ```
 
-### Allowed Image formats
+Successful Reponse Example:
 
-```js
-let options = {
-  allowedFormats: ["jpg", "jpeg", "png"]
-};
+```json
+{
+  "success": true,
+  "url": "https://storage.googleapis.com/screenify_bucket/RGaipM.png"
+}
 ```
