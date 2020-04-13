@@ -1,40 +1,51 @@
 require("dotenv").config();
-const config = require("./config/config")
-const multer = require('multer')
-const redis = require("./db/index")
+const config = require("./config/config"),
+  redis = require("./db/index"),
+  createCdnUploader = require('./cdn-upload/index.js.js'),
+  bodyParser = require("body-parser"),
+  express = require("express"),
+  cors = require("cors");
 
 
-const createCdnUploader = require('./cdnUploader/index.js');
-const bodyParser = require("body-parser");
-const express = require("express");
-const cors = require("cors");
-// const auth = require("./is-auth");
-var app = express();
+/**
+ * Express App
+ */
+let app = express();
+
+/**
+ * Middleware for disapling x - powered - by message
+ */
 app.disable('x-powered-by')
+
+/**
+ * Cross Origin Sources middleware 
+ */
 app.use(cors());
+
+/**
+ * Bodyparser middleware image buffer size to 50mb limit
+ */
 app.use(bodyParser.json({
   limit: '50mb'
 }));
+
+/**
+ * Bodyparser middleware urlencoded not extended
+ */
 app.use(bodyParser.urlencoded({
-
   extended: false,
-  limit: '50mb'
-}));
-
-app.use(express.json({
-  limit: '50mb'
-}));
-app.use(express.urlencoded({
-  limit: '50mb'
 }));
 
 
+/**
+ * Get / Api endpoint 
+ */
 app.get("/", (req, res) => {
   res.send("Screenify");
 });
 
 /**
- * Upload Api endpoint 
+ * /upload Api endpoint 
  */
 app.use("/api/upload", async (req, res, next) => {
   const {
@@ -82,7 +93,9 @@ function upload(serializeBlob, cdnType) {
   })
 }
 
-
+/**
+ * Error Handler middleware 
+ */
 app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
@@ -90,7 +103,7 @@ app.use(function (err, req, res, next) {
 
 
 /**
- * Server Starter
+ * Server Starter 🚀
  */
 const PORT = process.env.PORT || 8080
 
