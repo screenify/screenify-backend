@@ -15,7 +15,7 @@ npm start
 
 ## CDN Uploader Service 🖼️
 
-These are the service providers working in rudendency:
+Cloud Service providers:
 
 - [x] Google Cloud Storage.
 - [x] Cloudinary.
