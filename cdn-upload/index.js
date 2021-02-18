@@ -1,5 +1,4 @@
-const CloudinaryUploader = require('./cloudinary-uploader');
-const GoogleUploader = require("./google-uploader")
+const GoogleUploader = require("./google-uploader");
 
 /**
  * CDN selector
@@ -7,14 +6,10 @@ const GoogleUploader = require("./google-uploader")
  */
 
 module.exports = function createCdnUploader(config, type) {
-    switch (type) {
-        case 'google':
-            return new GoogleUploader(config);
-
-        case 'cloudinary':
-            return new CloudinaryUploader(config);
-
-        default:
-            return null;
-    }
-}
+  switch (type) {
+    case "google":
+      return new GoogleUploader(config);
+    default:
+      return null;
+  }
+};

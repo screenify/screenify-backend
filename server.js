@@ -1,4 +1,3 @@
-require("dotenv").config();
 const config = require("./config/config"),
   createCdnUploader = require("./cdn-upload/index.js"),
   bodyParser = require("body-parser"),
@@ -42,7 +41,7 @@ app.use(
  * @GET
  * static Api endpoint
  */
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.send("Screenify");
 });
 
@@ -95,7 +94,7 @@ function upload(serializeBlob, cdnType) {
 /**
  * Error Handler middleware
  */
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
