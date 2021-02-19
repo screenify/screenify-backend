@@ -3,8 +3,9 @@ FROM node:latest
 WORKDIR /app
 
 COPY package.json /app
+
 # Install dependencies
-RUN npm install
+RUN yarn install
 
 COPY . /app
 
