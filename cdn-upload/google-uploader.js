@@ -1,6 +1,6 @@
 const { Storage } = require("@google-cloud/storage");
 const path = require("path");
-const serviceKey = path.join(__dirname, "./keys.json");
+const serviceKey = path.join(__dirname, "./key.json");
 const randomstring = require("randomstring");
 const { format } = require("util");
 
