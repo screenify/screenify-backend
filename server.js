@@ -78,11 +78,6 @@ function upload(serializeBlob, cdnType) {
         // )
       )
       .then((url) => {
-        redis.create({
-          url: url,
-          cdnType: cdnType,
-          createdAt: new Date(),
-        });
         resolve(url);
       })
       .catch((e) => {
