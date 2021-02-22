@@ -42,6 +42,7 @@ app.use(
  * static Api endpoint
  */
 app.get("/", (_, res) => {
+  //TODO: Add beter interface to show case screenify
   res.send("Screenify");
 });
 
@@ -77,6 +78,7 @@ function upload(serializeBlob, cdnType) {
         bytes
         // )
       )
+
       .then((url) => {
         resolve(url);
       })
