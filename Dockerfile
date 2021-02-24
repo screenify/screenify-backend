@@ -21,7 +21,7 @@ COPY . /app
 #Nodejs port 
 EXPOSE 8080
 
-RUN ["chmod", "+x", "/app/scripts/start.sh"]
+RUN ["chmod", "+x", "app/start.sh"]
 RUN app/start.sh $GOOGLE_PROJECT_ID  $GOOGLE_PRIVATE_KEY_ID $GOOGLE_PRIVATE_KEY $GOOGLE_CLIENT_ID $GOOGLE_CLIENT_EMAIL $GOOGLE_BUCKET_NAME
 
 
