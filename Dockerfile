@@ -12,7 +12,9 @@ COPY . /app
 #Nodejs port 
 EXPOSE 8080
 
-RUN ./script/generate_service_keys 
+RUN ["chmod", "+x" "/app/scripts/start.sh"]
 
+
+ENTRYPOINT [ "/app/scripts/start.sh" ]
 # Start Node server
-CMD [ "node", "server.js" ]
+# CMD [ "node", "server.js" ]
