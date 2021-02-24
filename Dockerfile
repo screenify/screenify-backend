@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package.json /app
 
-COPY scripts /app
+COPY scripts/start.sh /app
 
 # Install dependencies
 RUN yarn install
@@ -22,7 +22,7 @@ COPY . /app
 EXPOSE 8080
 
 RUN ["chmod", "+x", "/app/scripts/start.sh"]
-RUN ["/app/scripts/start.sh", $GOOGLE_PROJECT_ID,  $GOOGLE_PRIVATE_KEY_ID, $GOOGLE_PRIVATE_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_CLIENT_EMAIL, $GOOGLE_BUCKET_NAME]
+RUN ["/app/start.sh", $GOOGLE_PROJECT_ID,  $GOOGLE_PRIVATE_KEY_ID, $GOOGLE_PRIVATE_KEY, $GOOGLE_CLIENT_ID, $GOOGLE_CLIENT_EMAIL, $GOOGLE_BUCKET_NAME]
 
 
 # ENTRYPOINT [ "/app/scripts/start.sh" ]
