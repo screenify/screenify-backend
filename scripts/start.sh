@@ -23,8 +23,3 @@ echo \
 GOOGLE_PROJECT_ID=$1
 GOOGLE_BUCKET_NAME=$6
 " > ../.env
-
-
-
-# start node server
-node ../server.js
