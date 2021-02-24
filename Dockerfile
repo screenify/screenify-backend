@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY package.json /app
 
+COPY scripts /app
+
 # Install dependencies
 RUN yarn install
 
