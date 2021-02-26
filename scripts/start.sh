@@ -4,10 +4,8 @@
 touch ./key.json
 touch ./.env
 
-PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\'$3'\n-----END PRIVATE KEY-----\n"
 
-echo "this should be the key is a whole $PRIVATE_KEY" 
-
+PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n$3\n-----END PRIVATE KEY-----\n"
 
 echo \
 '{
