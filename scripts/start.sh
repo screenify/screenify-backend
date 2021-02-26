@@ -9,7 +9,7 @@ echo \
     "type": "service_account",
     "project_id":"'$1'",
     "pivate_key_id":"'$2'",
-    "private_key":"'$3'",
+    "private_key":"'"$3"'",
     "client_email":"'$4'",
     "client_id":"'$5'",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
