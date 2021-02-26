@@ -4,9 +4,9 @@
 touch ./key.json
 touch ./.env
 
-private_key = "$3"
+PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\'$3'\n-----END PRIVATE KEY-----\n"
 
-echo "this should be the key is a whole" + private_key
+echo "this should be the key is a whole $PRIVATE_KEY" 
 
 
 echo \
@@ -14,7 +14,7 @@ echo \
     "type": "service_account",
     "project_id":"'$1'",
     "pivate_key_id":"'$2'",
-    "private_key":"'private_key'",
+    "private_key":"'$PRIVATE_KEY'",
     "client_email":"'$4'",
     "client_id":"'$5'",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
