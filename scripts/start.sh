@@ -4,6 +4,11 @@
 touch ./key.json
 touch ./.env
 
+private_key = "$3"
+
+echo "this should be the key is a whole" + private_key
+
+
 echo \
 '{
     "type": "service_account",
