@@ -70,10 +70,14 @@ app.use("/api/upload", async (req, res, next) => {
  */
 function upload(serializeBlob, cdnType) {
   return new Promise((resolve, reject) => {
-    const bytes = new Uint8Array(serializeBlob.split(","));
+    const bytes = serializeBlob; // new Uint8Array(serializeBlob.split(","));
     const uploader = createCdnUploader(config, cdnType);
     uploader
-      .upload(Buffer.from(bytes))
+      .upload(
+        // Buffer.from(
+        bytes
+        // )
+      )
 
       .then((url) => {
         resolve(url);
