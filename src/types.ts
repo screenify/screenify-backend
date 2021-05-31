@@ -1,0 +1,1 @@
+export type CDN = "GOOGLE" | "";
