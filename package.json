@@ -2,16 +2,16 @@
     "name": "screenify-backend",
     "version": "1.0.0",
     "description": "Services like email and SMS and image uploading",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "start": "NODE_ENV=production && node ./server.js",
-        "watch": "nodemon"
+        "dev": "nodemon build/src/index.js",
+        "watch": "tsc -w"
     },
     "author": "Adam Momen",
     "license": "ISC",
     "dependencies": {
         "@google-cloud/storage": "^5.8.0",
-        "body-parser": "^1.19.0",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
@@ -19,6 +19,12 @@
         "randomstring": "^1.1.5"
     },
     "devDependencies": {
-        "nodemon": "^2.0.7"
+        "@types/cors": "^2.8.10",
+        "@types/express": "^4.17.12",
+        "@types/node": "^15.6.1",
+        "@types/randomstring": "^1.1.6",
+        "nodemon": "^2.0.7",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.2"
     }
 }
